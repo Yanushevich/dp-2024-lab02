@@ -7,8 +7,7 @@ import log_handler
 
 if __name__ == '__main__':
     """Логи в файл"""
-    file_logger = singleton_logger.Logger(log_handler.FileLogHandler(
-        f'C:/Users/{os.getlogin()}/PycharmProjects/dp-2024-lab02'))
+    file_logger = singleton_logger.Logger(log_handler.FileLogHandler('./logs'))
     file_logger.log(
         message_formatter.UpperLogMessage().format_message(
             create_message.CreateMessage(log_level.LogLevel.INFO,'Logging to file in upper case')
