@@ -5,11 +5,9 @@ name: Лабораторная работа №2
 
 on:
   push:
-    branches: 
-    - feature
+    branches: [feature]
   pull_request:
-    branches: 
-    - feature
+    branches: [feature]
 
 permissions:
   contents: read
