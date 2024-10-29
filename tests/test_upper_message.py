@@ -4,7 +4,7 @@ import message_formatter
 
 class TestUpperMessage(unittest.TestCase):
     def setUp(self):
-        self.message = 'Not Upper case message'
+        self.message = "Not Upper case message"
 
     def test_if_upper(self):
         """Проверка: стала ли строка в верхнем регистре"""
@@ -12,5 +12,5 @@ class TestUpperMessage(unittest.TestCase):
         self.assertTrue(new_message.isupper())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
