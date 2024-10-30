@@ -12,10 +12,9 @@ class LogHandler(ABC):
 class FileLogHandler(LogHandler):
 
     def __init__(self, folder_path: str):
-        self.file_path = self.create_file(folder_path)
+        self.file_path = self._create_file(folder_path)
 
-    @staticmethod
-    def create_file(folder_path: str) -> str:
+    def _create_file(self, folder_path: str) -> str:
         """Создание файла"""
         timestamp = datetime.now().strftime("%Y-%m-%d.%H-%M-%S")
         log_filename = f"DP.P1.{timestamp}.log"
