@@ -1,40 +1,21 @@
-import os
 import create_message
-import message_formatter
-import singleton_logger
-import log_level
-import log_handler
+from handlers import message_formatter, log_handler
+from logger import logger, log_level
 
 if __name__ == "__main__":
-    """Логи в файл"""
-    file_logger = singleton_logger.Logger(log_handler.FileLogHandler("./logs"))
-    file_logger.log(
-        message_formatter.UpperLogMessage().format_message(
-            create_message.CreateMessage(
-                log_level.LogLevel.INFO, "Logging to file in upper case"
-            )
-        )
-    )
-    file_logger.log(
-        message_formatter.InitialLogMessage().format_message(
-            create_message.CreateMessage(
-                log_level.LogLevel.INFO, "Logging to file in initial case"
-            )
-        )
-    )
+    """Создание объекта логгера"""
+    logger = logger.Logger()
+    """Создание сообщения"""
+    message = create_message.CreateMessage(log_level.LogLevel.INFO, "Test message")
     """Логи в консоль"""
-    console_logger = singleton_logger.Logger(log_handler.ConsoleLogHandler())
-    console_logger.log(
-        message_formatter.InitialLogMessage().format_message(
-            create_message.CreateMessage(
-                log_level.LogLevel.INFO, "Logging to console in initial case"
-            )
-        )
-    )
-    console_logger.log(
-        message_formatter.UpperLogMessage().format_message(
-            create_message.CreateMessage(
-                log_level.LogLevel.INFO, "Logging to console in upper case"
-            )
-        )
-    )
+    logger.set_log_output(log_handler.ConsoleLogHandler())
+    logger.log(message)
+    """Замена вывода на файл"""
+    logger.set_log_output(log_handler.FileLogHandler("./logs"))
+    logger.log(message)
+    """Замена формата сообщения на верхний регистр"""
+    logger.set_format(message_formatter.UpperLogMessage())
+    logger.log(message)
+    """Логировать снова в консоль"""
+    logger.set_log_output(log_handler.ConsoleLogHandler())
+    logger.log(message)

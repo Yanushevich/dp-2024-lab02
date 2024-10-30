@@ -1,5 +1,5 @@
 from datetime import datetime
-import log_level
+from logger import log_level
 
 
 class CreateMessage(str):

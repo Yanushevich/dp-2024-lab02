@@ -1,5 +1,5 @@
 import unittest
-import message_formatter
+from handlers import message_formatter
 
 
 class TestInitialMessage(unittest.TestCase):

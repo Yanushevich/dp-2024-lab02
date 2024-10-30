@@ -1,6 +1,6 @@
 import unittest
 import create_message
-import log_level
+from logger import log_level
 from datetime import datetime
 
 

@@ -1,5 +1,5 @@
 import unittest
-import log_level
+from logger import log_level
 
 
 class TestLogLevel(unittest.TestCase):

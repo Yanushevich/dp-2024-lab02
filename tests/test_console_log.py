@@ -1,7 +1,7 @@
 import unittest
 from unittest import mock
 import io
-import log_handler
+from handlers import log_handler
 
 
 class TestFileCreation(unittest.TestCase):
