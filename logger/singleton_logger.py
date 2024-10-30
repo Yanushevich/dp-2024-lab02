@@ -1,7 +1,6 @@
 import threading
-
 from handlers import message_formatter, log_handler
-import singleton
+from logger import singleton
 
 
 class Logger(singleton.Singleton):

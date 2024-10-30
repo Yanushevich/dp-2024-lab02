@@ -1,10 +1,10 @@
 import create_message
 from handlers import message_formatter, log_handler
-from logger import logger, log_level
+from logger import singleton_logger, log_level
 
 if __name__ == "__main__":
     """Создание объекта логгера"""
-    logger = logger.Logger()
+    logger = singleton_logger.Logger()
     """Создание сообщения"""
     message = create_message.CreateMessage(log_level.LogLevel.INFO, "Test message")
     """Логи в консоль"""
