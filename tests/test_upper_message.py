@@ -3,7 +3,10 @@ from handlers import message_formatter
 
 
 class TestUpperMessage(unittest.TestCase):
+    """Проверка стратегии формата верхнего регистра"""
+
     def setUp(self):
+        """Первоначальное сообщение"""
         self.message = "Not Upper case message"
 
     def test_if_upper(self):

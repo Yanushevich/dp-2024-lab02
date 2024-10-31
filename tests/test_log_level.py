@@ -3,6 +3,8 @@ from logger import log_level
 
 
 class TestLogLevel(unittest.TestCase):
+    """Проверка перечисления уровней логирования"""
+
     def test_level_values(self):
         """Проверка на соответствие значений названиям"""
         self.assertEqual(log_level.LogLevel.INFO.value, "INFO")

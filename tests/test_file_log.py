@@ -6,6 +6,8 @@ from handlers import log_handler
 
 
 class TestFileCreation(unittest.TestCase):
+    """Проверка создания файла с использованием буфера"""
+
     def setUp(self):
         """Название файла"""
         timestamp = datetime.now().strftime("%Y-%m-%d.%H-%M-%S")

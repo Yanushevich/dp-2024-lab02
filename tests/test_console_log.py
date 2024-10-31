@@ -4,7 +4,9 @@ import io
 from handlers import log_handler
 
 
-class TestFileCreation(unittest.TestCase):
+class TestConsoleLog(unittest.TestCase):
+    """Проверка вывода лога в консоль с использованием буфера"""
+
     @unittest.mock.patch("sys.stdout", new_callable=io.StringIO)
     def test_console_logging(self, mock_stdout):
         """Проверка вывода сообщения в консоль"""
